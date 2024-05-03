@@ -76,6 +76,5 @@ add_filter('get_the_archive_title', 'my_archive_title');
  * @param string|null $icon_url メニューに表示するアイコンの URL
  * @param int $position メニューの位置
  */
-SCF::add_options_page('CodeUps-Diving', '金額一覧', 'manage_options', 'theme-options');
-
+SCF::add_options_page('price', '金額一覧', 'manage_options', 'theme-options');
 ?>

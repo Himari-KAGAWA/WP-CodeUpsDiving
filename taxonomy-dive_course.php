@@ -24,7 +24,7 @@
           <div class="category-list__tabs">
             <ul class="category-list__items">
               <li class="category-list__item">
-                <a href="http://codeups-diving.local/campaign/" class="category-list__item-link category category--link">ALL</a>
+                <a href="http://xs273754.xsrv.jp/himarin_DIVING/campaign/" class="category-list__item-link category category--link">ALL</a>
               </li>
               <?php $dive_terms = get_terms('dive_course', array('hide_empty => false')); ?>
               <?php foreach ($dive_terms as $dive_term) : ?>
@@ -44,11 +44,11 @@
                 <!-- campaign-card -->
                 <div class="page-campaign__card-item card-01">
                   <div class="card-01__link">
-                    <div class="card-01__img">
+                    <div class="card-01__img card-01__img--cam">
                       <?php if (has_post_thumbnail()) : ?>
                         <?php the_post_thumbnail(); ?>
                       <?php else : ?>
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimg.jpg" alt="">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimg.jpg" alt="no image">
                       <?php endif; ?>
                     </div>
                     <div class="card-01__body card-01__body--page">

@@ -24,67 +24,70 @@
         <div class="sitemap__content">
           <ul class="sitemap__items1">
             <li class="sitemap__item sitemap__item-bold">
-              <a href="./page-campaign.html">キャンペーン</a>
+              <a href="http://xs273754.xsrv.jp/himarin_DIVING/campaign/">キャンペーン</a>
             </li>
             <li class="sitemap__item">
-              <a href="./page-campaign.html#tab01">ライセンス取得</a>
+              <a href="http://xs273754.xsrv.jp/himarin_DIVING/dive_course/fun/">ファンダイビング</a>
             </li>
             <li class="sitemap__item">
-              <a href="./page-campaign.html#tab03">貸切体験ダイビング</a>
+              <a href="http://xs273754.xsrv.jp/himarin_DIVING/dive_course/license/">ライセンス講習</a>
             </li>
             <li class="sitemap__item">
-              <a href="./page-campaign.html#tab02">ナイトダイビング</a>
+              <a href="http://xs273754.xsrv.jp/himarin_DIVING/dive_course/experience/">体験ダイビング</a>
             </li>
             <li class="sitemap__item sitemap__item-bold sitemap__item--layout">
-              <a href="./page-about.html">私たちについて</a>
+              <a href="http://xs273754.xsrv.jp/himarin_DIVING/about-us/">私たちについて</a>
             </li>
           </ul>
           <ul class="sitemap__items2">
             <li class="sitemap__item sitemap__item-bold">
-              <a href="./page-information.html">ダイビング情報</a>
+              <a href="http://xs273754.xsrv.jp/himarin_DIVING/information/">ダイビング情報</a>
             </li>
             <li class="sitemap__item">
-              <a href="./page-information.html#panel1">ライセンス講習</a>
+              <a href="http://xs273754.xsrv.jp/himarin_DIVING/information#panel1">ライセンス講習</a>
             </li>
             <li class="sitemap__item">
-              <a href="./page-information.html#panel3">体験ダイビング</a>
+              <a href="http://xs273754.xsrv.jp/himarin_DIVING/information#panel3">体験ダイビング</a>
             </li>
             <li class="sitemap__item">
-              <a href="./page-information.html#panel2">ファンダイビング</a>
+              <a href="http://xs273754.xsrv.jp/himarin_DIVING/information#panel2">ファンダイビング</a>
             </li>
             <li class="sitemap__item sitemap__item-bold sitemap__item--layout">
-              <a href="./page-blog.html">ブログ</a>
+              <a href="http://xs273754.xsrv.jp/himarin_DIVING/blog/">ブログ</a>
             </li>
           </ul>
           <ul class="sitemap__items3">
             <li class="sitemap__item sitemap__item-bold">
-              <a href="./page-voice.html">お客様の声</a>
+              <a href="http://xs273754.xsrv.jp/himarin_DIVING/voice/">お客様の声</a>
             </li>
             <li class="sitemap__item sitemap__item-bold sitemap__item--layout">
-              <a href="./page-price.html">料金一覧</a>
+              <a href="http://xs273754.xsrv.jp/himarin_DIVING/price/">料金一覧</a>
             </li>
             <li class="sitemap__item">
-              <a href="./page-campaign.html#tab01">ライセンス講習</a>
+              <a href="http://xs273754.xsrv.jp/himarin_DIVING/campaign#tab01">ライセンス講習</a>
             </li>
             <li class="sitemap__item">
-              <a href="./page-campaign.html#tab03">体験ダイビング</a>
+              <a href="http://xs273754.xsrv.jp/himarin_DIVING/campaign#tab03">体験ダイビング</a>
             </li>
             <li class="sitemap__item">
-              <a href="./page-campaign.html#tab02">ファンダイビング</a>
+              <a href="http://xs273754.xsrv.jp/himarin_DIVING/campaign#tab02">ファンダイビング</a>
             </li>
           </ul>
           <ul class="sitemap__items4">
             <li class="sitemap__item sitemap__item-bold">
-              <a href="./page-faq.html">よくある質問</a>
+              <a href="http://xs273754.xsrv.jp/himarin_DIVING/faq/">よくある質問</a>
             </li>
             <li class="sitemap__item sitemap__item-bold sitemap__item--layout">
-              <a href="./page-privacy.html">プライバシー<br class="u-mobile" />ポリシー</a>
+              <a href="http://xs273754.xsrv.jp/himarin_DIVING/privacypolicy/">プライバシー<br class="u-mobile" />ポリシー</a>
             </li>
             <li class="sitemap__item sitemap__item-bold sitemap__item--layout">
-              <a href="./page-terms.html">利用規約</a>
+              <a href="http://xs273754.xsrv.jp/himarin_DIVING/terms-of-service/">利用規約</a>
             </li>
             <li class="sitemap__item sitemap__item-bold sitemap__item--layout">
-              <a href="./page-contact.html">お問わ合せ</a>
+            <a href="http://xs273754.xsrv.jp/himarin_DIVING/sitemap/">サイトマップ</a>
+          </li>
+            <li class="sitemap__item sitemap__item-bold sitemap__item--layout">
+              <a href="http://xs273754.xsrv.jp/himarin_DIVING/contact">お問わ合せ</a>
             </li>
           </ul>
 

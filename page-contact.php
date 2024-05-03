@@ -22,8 +22,8 @@
 
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
               <?php the_content(); ?>
-          <?php endwhile;
-          endif; ?>
+            <?php endwhile; ?>
+          <?php endif; ?>
 
           <div class="page-contact__Indication">
             This site is protected by reCAPTCHA and the Google

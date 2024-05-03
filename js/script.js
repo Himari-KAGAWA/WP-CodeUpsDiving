@@ -362,5 +362,4 @@ jQuery(function ($) {
       $("html, body").scrollTop(scrollTo);
     }
   });
-
 });

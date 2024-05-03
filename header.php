@@ -2,24 +2,11 @@
 <html lang="ja">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <meta name="format-detection" content="telephone=no" />
-  <!-- noindex -->
-  <meta name="robots" content="noindex" />
-  <!-- meta情報 -->
-  <title>CodeUps：DIVING into the ocean</title>
-  <meta name="description" content="" />
-  <meta name="keywords" content="" />
-  <!-- ogp -->
-  <meta property="og:title" content="" />
-  <meta property="og:type" content="" />
-  <meta property="og:url" content="" />
-  <meta property="og:image" content="" />
-  <meta property="og:site_name" content="" />
-  <meta property="og:description" content="" />
-  <!-- ファビコン -->
-  <link rel="icon" href="http://xs273754.xsrv.jp/himarin_DIVING/images/common/favicon.ico" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/img/icon-home.png">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -111,13 +98,13 @@
                 <a href="http://xs273754.xsrv.jp/himarin_DIVING/campaign/">キャンペーン</a>
               </li>
               <li class="sp-nav__item">
-                <a href="http://xs273754.xsrv.jp/himarin_DIVING/campaign#tab01">ライセンス取得</a>
+                <a href="http://xs273754.xsrv.jp/himarin_DIVING/dive_course/fun/">ファンダイビング</a>
               </li>
               <li class="sp-nav__item">
-                <a href="http://xs273754.xsrv.jp/himarin_DIVING/campaign#tab03">貸切体験ダイビング</a>
+                <a href="http://xs273754.xsrv.jp/himarin_DIVING/dive_course/license/">ライセンス講習</a>
               </li>
               <li class="sp-nav__item">
-                <a href="http://xs273754.xsrv.jp/himarin_DIVING/campaign#tab02">ファンダイビング</a>
+                <a href="http://xs273754.xsrv.jp/himarin_DIVING/dive_course/experience/">体験ダイビング</a>
               </li>
               <li class="sp-nav__item sp-nav__item--bold sp-nav__item--layout">
                 <a href="http://xs273754.xsrv.jp/himarin_DIVING/about-us/">私たちについて</a>
@@ -166,6 +153,9 @@
               </li>
               <li class="sp-nav__item sp-nav__item--bold sp-nav__item--layout">
                 <a href="http://xs273754.xsrv.jp/himarin_DIVING/terms-of-service/">利用規約</a>
+              </li>
+              <li class="sp-nav__item sp-nav__item--bold sp-nav__item--layout">
+                <a href="http://xs273754.xsrv.jp/himarin_DIVING/sitemap/">サイトマップ</a>
               </li>
               <li class="sp-nav__item sp-nav__item--bold sp-nav__item--layout">
                 <a href="http://xs273754.xsrv.jp/himarin_DIVING/contact/">お問わ合せ</a>

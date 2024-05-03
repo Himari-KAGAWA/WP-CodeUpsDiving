@@ -589,8 +589,9 @@ a {
 }
 
 .card-01__img img {
-  height: auto;
+  height: 11.75rem;
   width: 100%;
+  object-fit: cover;
 }
 
 .card-01__body {
@@ -693,6 +694,7 @@ a {
   color: #0d2936;
   padding: 1rem 1rem 1.5rem;
   width: 100%;
+  min-height: 27.9375rem;
 }
 
 .card-02__link:hover .card-02__img img {
@@ -769,14 +771,15 @@ a {
 }
 
 .card-03__img {
+  overflow: hidden;
   aspect-ratio: 151/117;
   flex: 1 0 48.24%;
-  overflow: hidden;
 }
 
 .card-03__img img {
-  height: auto;
   width: 100%;
+  object-fit: cover;
+  height: 7.3125rem;
 }
 
 .card-03__content {
@@ -1964,6 +1967,7 @@ page-about .about__contents--page {
 
 .page-sidebar__articles .card-02 {
   padding: 1rem;
+  min-height: unset;
 }
 
 .page-sidebar__articles .card-02__link {
@@ -2125,7 +2129,7 @@ page-about .about__contents--page {
 
 .page-sidebar__campaign-card .card-01__img img {
   -o-object-fit: cover;
-  height: 100%;
+  height: 11.75rem;
   object-fit: cover;
 }
 
@@ -2247,7 +2251,7 @@ page-about .about__contents--page {
   position: relative;
 }
 
-.pagination__prev::before {
+.pagination__prev a::before {
   border-bottom: 0.0625rem solid #408f95;
   border-left: 0.0625rem solid #408f95;
   content: "";
@@ -2260,7 +2264,7 @@ page-about .about__contents--page {
   right: 0.75rem;
 }
 
-.pagination__next::before {
+.pagination__next a::before {
   border-bottom: 0.0625rem solid #408f95;
   border-right: 0.0625rem solid #408f95;
   content: "";
@@ -3053,6 +3057,7 @@ page-about .about__contents--page {
 
 .voice-cards__item.card-03 {
   padding-bottom: 1.48rem;
+  min-height: 24.75rem;
 }
 
 .voice__inner {
@@ -3377,6 +3382,10 @@ page-about .about__contents--page {
     aspect-ratio: 334/223;
   }
 
+  .card-01__img img {
+    height: 13.9375rem;
+  }
+
   .card-01__body {
     padding-bottom: 2.5rem;
     padding-top: 1.5rem;
@@ -3422,6 +3431,18 @@ page-about .about__contents--page {
     flex-direction: column;
   }
 
+  @media screen and (min-width: 768px) {
+    .card-01__img--cam {
+      aspect-ratio: 520 / 347;
+    }
+
+    .card-01__img--cam img {
+      object-fit: cover;
+      width: 100%;
+      height: 21.6875rem;
+    }
+  }
+
   .card-02__header {
     margin-top: 1.0625rem;
     padding-bottom: 0.24rem;
@@ -3456,6 +3477,12 @@ page-about .about__contents--page {
   .card-03__img {
     aspect-ratio: 180/140;
     flex: 1 0 38.1355932203%;
+  }
+
+  .card-03__img img {
+    width: 100%;
+    object-fit: cover;
+    height: 8.75rem;
   }
 
   .card-03__content {
@@ -4973,6 +5000,11 @@ span.wpcf7-spinner {
 .wpcf7-list-item input[type="checkbox"]#form-privacy.is-error {
   background-color: rgba(201, 72, 0, 0.2);
   border: solid 0.0625rem #c94800;
+}
+
+.wpcf7-list-item input[type="checkbox"]#form-privacy.is-error:checked {
+  background: #fff;
+  border: solid 0.0625rem #408f95;
 }
 
 .wpcf7 form.invalid .wpcf7-response-output {

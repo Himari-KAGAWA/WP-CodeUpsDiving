@@ -23,7 +23,7 @@
         <div class="page-voice__nav category-list">
           <ul class="category-list__items">
             <li class="category-list__item">
-              <a href="http://codeups-diving.local/voice/" class="category-list__item-link category category--link">ALL</a>
+              <a href="http://xs273754.xsrv.jp/himarin_DIVING/voice/" class="category-list__item-link category category--link">ALL</a>
             </li>
             <?php $testimonials_terms = get_terms('testimonials', array('hide_empty => false')); ?>
             <?php foreach ($testimonials_terms as $testimonials_term) : ?>
@@ -55,7 +55,7 @@
                     <?php if (has_post_thumbnail()) : ?>
                       <?php the_post_thumbnail(); ?>
                     <?php else : ?>
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimg.jpg" alt="">
+                      <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimg.jpg" alt="no image">
                     <?php endif; ?>
                   </div>
                 </div>

@@ -33,14 +33,23 @@
               <a href="<?php echo get_permalink($popular_post->id); ?>" class="card-02__link">
                 <div class="card-02__img">
                   <?php if (has_post_thumbnail($popular_post->id)) : ?>
-                    <img src="<?php echo get_the_post_thumbnail_url($popular_post->id); ?>" alt="">
+                    <img src="<?php echo get_the_post_thumbnail_url($popular_post->id); ?>" alt="人気記事のサムネイル">
                   <?php else : ?>
                     <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimg.jpg" alt="">
                   <?php endif; ?>
                 </div>
                 <div class="card-02__header">
                   <time class="card-02__date" datetime="<?php echo $popular_post->date; ?>"><?php echo $popular_post->date; ?></time>
-                  <h3 class="card-02__title"><?php echo $popular_post->title; ?></h3>
+                  <h3 class="card-02__title">
+                    <?php
+                    if (mb_strlen($popular_post->title) > 24) {
+                      $title = mb_substr($popular_post->title, 0, 24);
+                      echo $title . '...';
+                    } else {
+                      echo $popular_post->title;
+                    }
+                    ?>
+                  </h3>
                 </div>
               </a>
             </li>

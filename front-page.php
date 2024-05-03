@@ -234,7 +234,7 @@
                   <h3 class="card-02__title"><?php the_title(); ?></h3>
                 </div>
                 <div class="card-02__content">
-                  <p><?php echo wp_trim_words(get_the_content(), 84, '…続きを見る'); ?></p>
+                  <?php the_content(); ?>
                 </div>
               </a>
             </article>
@@ -298,9 +298,14 @@
                 </div>
               </div>
               <div class="card-03__content">
-                <p>
-                  <?php echo wp_trim_words(get_the_content(), 200, '…'); ?>
-                </p>
+                <?php
+                if (mb_strlen($post->post_content, 'UTF-8') > 170) {
+                  $content = mb_substr(strip_tags($post->post_content), 0, 170, 'UTF-8');
+                  echo $content . '……';
+                } else {
+                  echo strip_tags($post->post_content);
+                }
+                ?>
               </div>
             </div>
             <!-- Voice-card -->
