@@ -35,6 +35,16 @@ jQuery(function ($) {
     $("body").removeClass("no-scroll"); // ナビ内のリンクがクリックされたらno-scrollクラスを外す
   });
 
+  // ウィンドウがリサイズされたときのイベント
+  $(window).resize(function () {
+    if ($(window).width() > 768) {
+      // ウィンドウ幅が768px以上のときにスマホナビを非表示にする
+      $(".js-sp-nav").fadeOut();
+      $(".js-hamburger").removeClass("is-open");
+      $("body").removeClass("no-scroll");
+    }
+  });
+
   // swiper メインビュー
   var initSwiper = function initSwiper() {
     var swiper = new Swiper(".js-main-visual-swiper", {
@@ -62,7 +72,6 @@ jQuery(function ($) {
       delay: 5000,
       disableOnInteraction: false,
     },
-    // overflow:hidden;したクラスを追記する↓
     // Navigation arrows
     navigation: {
       nextEl: ".js-campaign-next",
@@ -105,23 +114,16 @@ jQuery(function ($) {
     });
   });
 
-  // // ヘッダー色変更
-  // // ヘッダークラス名付与
-  // let header = $(".header");
-  // // ヘッダーの高さ取得
-  // let headerHeight = $(".header").height();
-  // // メインビューの高さを取得
-  // let height = $(".main-visual").height();
-  // // メインビューの高さ - ヘッダーの高さ
-  // $(window).scroll(function () {
-  //   if ($(this).scrollTop() > height - headerHeight) {
-  //     // 指定px以上のスクロールでクラス名付与
-  //     header.addClass("is-color");
-  //   } else {
-  //     // クラス名が付いてたら削除
-  //     header.removeClass("is-color");
-  //   }
-  // });
+  // ページトップへのスクロール
+  document.querySelector(".to-top").addEventListener("click", function () {
+    if (typeof window.top !== "undefined") {
+      // 'top' プロパティが定義されている場合の処理
+      window.top.scrollTo(0, 0); // 例えば、ページのトップにスクロールする
+    } else {
+      // 'top' プロパティが定義されていない場合のエラーハンドリング
+      console.error("'top' プロパティが定義されていません。");
+    }
+  });
 
   // スムーススクロール
   // #から始まるURLがクリックされた時

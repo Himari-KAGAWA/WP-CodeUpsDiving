@@ -64,13 +64,13 @@
               <a href="http://xs273754.xsrv.jp/himarin_DIVING/price/">料金一覧</a>
             </li>
             <li class="sitemap__item">
-              <a href="http://xs273754.xsrv.jp/himarin_DIVING/campaign#tab01">ライセンス講習</a>
+              <a href="http://xs273754.xsrv.jp/himarin_DIVING/price#license">ライセンス講習</a>
             </li>
             <li class="sitemap__item">
-              <a href="http://xs273754.xsrv.jp/himarin_DIVING/campaign#tab03">体験ダイビング</a>
+              <a href="http://xs273754.xsrv.jp/himarin_DIVING/price#experience">体験ダイビング</a>
             </li>
             <li class="sitemap__item">
-              <a href="http://xs273754.xsrv.jp/himarin_DIVING/campaign#tab02">ファンダイビング</a>
+              <a href="http://xs273754.xsrv.jp/himarin_DIVING/price#fun">ファンダイビング</a>
             </li>
           </ul>
           <ul class="sitemap__items4">

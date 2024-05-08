@@ -7,12 +7,13 @@
     <div class="footer__wrapper footer-nav">
       <div class="footer-nav__logo">
         <img src="<?php echo get_template_directory_uri(); ?>/images/common/logo-footer_sp.png" alt="CodeUps" width="120" height="45" />
+
         <ul class="footer-nav__sns">
           <li class="footer-nav__icon">
-            <a href="" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/common/FacebookLogo.png" alt="facebookアイコン" width="24" height="24" /></a>
+            <a href="https://www.facebook.com/?locale=ja_JP" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/common/FacebookLogo.png" alt="facebookアイコン" width="24" height="24" /></a>
           </li>
           <li class="footer-nav__icon">
-            <a href="" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/common/InstagramLogo.png" alt="instagramアイコン" width="24" height="24" /></a>
+            <a href="https://about.instagram.com/ja-jp" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/common/InstagramLogo.png" alt="instagramアイコン" width="24" height="24" /></a>
           </li>
         </ul>
       </div>

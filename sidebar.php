@@ -1,6 +1,6 @@
 <!-- page-sidebar -->
-<div class="page-sidebar top-sidebar">
-  <aside class="page-sidebar__contents">
+<aside class="page-sidebar top-sidebar">
+  <div class="page-sidebar__contents">
     <div class="page-sidebar__popular-articles">
       <div class="page-sidebar__title sidebar-header">
         <h2 class="sidebar-header__title">
@@ -206,7 +206,7 @@
       </div>
 
     </div>
-</div>
+  </div>
 </aside>
 </div>
 <!-- /page-sidebar -->

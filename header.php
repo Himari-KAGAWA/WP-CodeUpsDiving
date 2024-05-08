@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
-  <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/img/icon-home.png">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,8 +14,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.css" />
   <!-- swiper js -->
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.7/swiper-bundle.min.js"></script>
-  <!-- inview js -->
-  <script defer src="./assets/js/jquery.inview.min.js"></script>
 
   <?php wp_head(); ?>
 </head>

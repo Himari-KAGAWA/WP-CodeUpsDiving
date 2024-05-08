@@ -22,20 +22,18 @@ add_action("wp_enqueue_scripts", "my_script_init");
 
 
 // カスタム投稿タイプの表示件数指定
-function change_posts_per_page($query)
-{
-  if (is_admin() || !$query->is_main_query())
-    return;
-  if ($query->is_post_type_archive('campaign')) {
-    $query->set('posts_per_page', '4');
-    return;
-  }
-  if ($query->is_post_type_archive('voice')) {
-    $query->set('posts_per_page', '6');
-    return;
+function custom_posts_per_page( $query ) {
+  if ( !is_admin() && $query->is_main_query() ) {
+      if ( $query->is_post_type_archive('campaign') || $query->is_tax('dive_course') ) {
+          $query->set( 'posts_per_page', 4 ); // dive_course タクソノミーのアーカイブページの投稿数を 4 に設定
+      }
+      elseif ( $query->is_post_type_archive('voice') || is_tax('testimonials') ) {
+          $query->set( 'posts_per_page', 6 ); // testimonials タクソノミーのアーカイブページの投稿数を 6 に設定
+      }
   }
 }
-add_action('pre_get_posts', 'change_posts_per_page');
+add_action( 'pre_get_posts', 'custom_posts_per_page' );
+
 
 // アーカイブタイトルの書きかえ
 function my_archive_title($title)
