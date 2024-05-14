@@ -24,12 +24,12 @@
           <div class="category-list__tabs">
             <ul class="category-list__items">
               <li class="category-list__item">
-                <a href="http://xs273754.xsrv.jp/himarin_DIVING/campaign/" class="category-list__item-link category category--link is-show">ALL</a>
+                <a href="<?php echo esc_url( home_url( '/campaign' ) ); ?>" class="category-list__item-link category category--link is-show">ALL</a>
               </li>
-              <?php $dive_terms = get_terms('dive_course', array('hide_empty => false')); ?>
+              <?php $dive_terms = get_terms('campaign_category', array('hide_empty => false')); ?>
               <?php foreach ($dive_terms as $dive_term) : ?>
                 <li class="category-list__item">
-                  <a href="<?php echo get_term_link($dive_term, 'dive_course'); ?>" class="category-list__item-link category category--link"><?php echo $dive_term->name; ?></a>
+                  <a href="<?php echo get_term_link($dive_term, 'campaign_category'); ?>" class="category-list__item-link category category--link"><?php echo $dive_term->name; ?></a>
                 <?php endforeach; ?>
                 </li>
             </ul>
@@ -47,13 +47,13 @@
                       <?php if (has_post_thumbnail()) : ?>
                         <?php the_post_thumbnail(); ?>
                       <?php else : ?>
-                        <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimg.jpg" alt="no image">
+                        <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimg.jpg" alt="No image">
                       <?php endif; ?>
                     </div>
                     <div class="card-01__body card-01__body--page">
                       <div class="card-01__header card-01__header--page">
                         <div class="category">
-                          <?php echo get_the_terms(get_the_ID(), 'dive_course')[0]->name; ?>
+                          <?php echo get_the_terms(get_the_ID(), 'campaign_category')[0]->name; ?>
                         </div>
                         <h3 class="card-01__title card-01__title--page">
                           <?php the_title(); ?>
@@ -75,7 +75,7 @@
                           ご予約・お問い合わせはコチラ
                         </p>
                         <div class="card-01__lower-unit-link">
-                          <a href="http://xs273754.xsrv.jp/himarin_DIVING/contact/" class="link-button">Contact us
+                          <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>" class="link-button">Contact us
                             <span class="arrow-x"></span>
                           </a>
                         </div>
@@ -103,9 +103,6 @@
 
   </div>
   </div>
-  <!-- contact -->
-  <?php get_template_part('layout-contact'); ?>
-  <!-- /contact -->
 </main>
 
 <?php get_footer(); ?>

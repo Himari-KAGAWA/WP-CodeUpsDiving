@@ -25,10 +25,10 @@
             <li class="category-list__item">
               <a href="http://xs273754.xsrv.jp/himarin_DIVING/voice/" class="category-list__item-link category category--link">ALL</a>
             </li>
-            <?php $testimonials_terms = get_terms('testimonials', array('hide_empty => false')); ?>
-            <?php foreach ($testimonials_terms as $testimonials_term) : ?>
+            <?php $voice_category_terms = get_terms('voice_category', array('hide_empty => false')); ?>
+            <?php foreach ($voice_category_terms as $voice_category_term) : ?>
               <li class="category-list__item">
-                <a href="<?php echo get_term_link($testimonials_term, 'testimonials'); ?>" class="category-list__item-link category category--link <?php if (is_tax('testimonials') && $testimonials_term->slug == get_queried_object()->slug) echo 'is-show'; ?>"><?php echo $testimonials_term->name; ?></a>
+                <a href="<?php echo get_term_link($voice_category_term, 'voice_category'); ?>" class="category-list__item-link category category--link <?php if (is_tax('voice_category') && $voice_category_term->slug == get_queried_object()->slug) echo 'is-show'; ?>"><?php echo $voice_category_term->name; ?></a>
               <?php endforeach; ?>
               </li>
           </ul>
@@ -45,7 +45,7 @@
                   <div class="card-03__left">
                     <div class="card-03__attribute">
                       <p><?php the_field('age') ?>代(<?php the_field('gender') ?>)</p>
-                      <span class="category"><?php echo get_the_terms(get_the_ID(), 'testimonials')[0]->name; ?></span>
+                      <span class="category"><?php echo get_the_terms(get_the_ID(), 'voice_category')[0]->name; ?></span>
                     </div>
                     <h3 class="card-03__title">
                       <?php the_title(); ?>
@@ -55,7 +55,7 @@
                     <?php if (has_post_thumbnail()) : ?>
                       <?php the_post_thumbnail(); ?>
                     <?php else : ?>
-                      <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimg.jpg" alt="no image">
+                      <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimg.jpg" alt="No image">
                     <?php endif; ?>
                   </div>
                 </div>
@@ -83,9 +83,6 @@
   </div>
   <!-- /page-contents -->
 
-  <!-- contact -->
-  <?php get_template_part('layout-contact'); ?>
-  <!-- /contact -->
 </main>
 
 <?php get_footer(); ?>

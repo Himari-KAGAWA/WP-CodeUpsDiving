@@ -24,70 +24,70 @@
         <div class="sitemap__content">
           <ul class="sitemap__items1">
             <li class="sitemap__item sitemap__item-bold">
-              <a href="http://xs273754.xsrv.jp/himarin_DIVING/campaign/">キャンペーン</a>
+              <a href="<?php echo esc_url( home_url( '/campaign' ) ); ?>">キャンペーン</a>
             </li>
             <li class="sitemap__item">
-              <a href="http://xs273754.xsrv.jp/himarin_DIVING/dive_course/fun/">ファンダイビング</a>
+              <a href="<?php echo esc_url( home_url( '/campaign_category/fun' ) ); ?>">ファンダイビング</a>
             </li>
             <li class="sitemap__item">
-              <a href="http://xs273754.xsrv.jp/himarin_DIVING/dive_course/license/">ライセンス講習</a>
+              <a href="<?php echo esc_url( home_url( '/campaign_category/license' ) ); ?>">ライセンス講習</a>
             </li>
             <li class="sitemap__item">
-              <a href="http://xs273754.xsrv.jp/himarin_DIVING/dive_course/experience/">体験ダイビング</a>
+              <a href="<?php echo esc_url( home_url( '/campaign_category/experience' ) ); ?>">体験ダイビング</a>
             </li>
             <li class="sitemap__item sitemap__item-bold sitemap__item--layout">
-              <a href="http://xs273754.xsrv.jp/himarin_DIVING/about-us/">私たちについて</a>
+              <a href="<?php echo esc_url( home_url( '/about-us' ) ); ?>">私たちについて</a>
             </li>
           </ul>
           <ul class="sitemap__items2">
             <li class="sitemap__item sitemap__item-bold">
-              <a href="http://xs273754.xsrv.jp/himarin_DIVING/information/">ダイビング情報</a>
+              <a href="<?php echo esc_url( home_url( '/information' ) ); ?>">ダイビング情報</a>
             </li>
             <li class="sitemap__item">
-              <a href="http://xs273754.xsrv.jp/himarin_DIVING/information#panel1">ライセンス講習</a>
+              <a href="<?php echo esc_url( home_url( '/information#panel1' ) ); ?>">ライセンス講習</a>
             </li>
             <li class="sitemap__item">
-              <a href="http://xs273754.xsrv.jp/himarin_DIVING/information#panel3">体験ダイビング</a>
+              <a href="<?php echo esc_url( home_url( '/information#panel3' ) ); ?>">体験ダイビング</a>
             </li>
             <li class="sitemap__item">
-              <a href="http://xs273754.xsrv.jp/himarin_DIVING/information#panel2">ファンダイビング</a>
+              <a href="<?php echo esc_url( home_url( '/information#panel2' ) ); ?>">ファンダイビング</a>
             </li>
             <li class="sitemap__item sitemap__item-bold sitemap__item--layout">
-              <a href="http://xs273754.xsrv.jp/himarin_DIVING/blog/">ブログ</a>
+              <a href="<?php echo esc_url( home_url( '/blog' ) ); ?>">ブログ</a>
             </li>
           </ul>
           <ul class="sitemap__items3">
             <li class="sitemap__item sitemap__item-bold">
-              <a href="http://xs273754.xsrv.jp/himarin_DIVING/voice/">お客様の声</a>
+              <a href="<?php echo esc_url( home_url( '/voice' ) ); ?>">お客様の声</a>
             </li>
             <li class="sitemap__item sitemap__item-bold sitemap__item--layout">
-              <a href="http://xs273754.xsrv.jp/himarin_DIVING/price/">料金一覧</a>
+              <a href="<?php echo esc_url( home_url( '/price' ) ); ?>">料金一覧</a>
             </li>
             <li class="sitemap__item">
-              <a href="http://xs273754.xsrv.jp/himarin_DIVING/price#license">ライセンス講習</a>
+              <a href="<?php echo esc_url( home_url( '/price#license' ) ); ?>">ライセンス講習</a>
             </li>
             <li class="sitemap__item">
-              <a href="http://xs273754.xsrv.jp/himarin_DIVING/price#experience">体験ダイビング</a>
+              <a href="<?php echo esc_url( home_url( '/price#experience' ) ); ?>">体験ダイビング</a>
             </li>
             <li class="sitemap__item">
-              <a href="http://xs273754.xsrv.jp/himarin_DIVING/price#fun">ファンダイビング</a>
+              <a href="<?php echo esc_url( home_url( '/price#fun' ) ); ?>">ファンダイビング</a>
             </li>
           </ul>
           <ul class="sitemap__items4">
             <li class="sitemap__item sitemap__item-bold">
-              <a href="http://xs273754.xsrv.jp/himarin_DIVING/faq/">よくある質問</a>
+              <a href="<?php echo esc_url( home_url( '/faq' ) ); ?>">よくある質問</a>
             </li>
             <li class="sitemap__item sitemap__item-bold sitemap__item--layout">
-              <a href="http://xs273754.xsrv.jp/himarin_DIVING/privacypolicy/">プライバシー<br class="u-mobile" />ポリシー</a>
+              <a href="<?php echo esc_url( home_url( '/privacypolicy' ) ); ?>">プライバシー<br class="u-mobile" />ポリシー</a>
             </li>
             <li class="sitemap__item sitemap__item-bold sitemap__item--layout">
-              <a href="http://xs273754.xsrv.jp/himarin_DIVING/terms-of-service/">利用規約</a>
+              <a href="<?php echo esc_url( home_url( '/terms-of-service' ) ); ?>">利用規約</a>
             </li>
             <li class="sitemap__item sitemap__item-bold sitemap__item--layout">
-            <a href="http://xs273754.xsrv.jp/himarin_DIVING/sitemap/">サイトマップ</a>
+            <a href="<?php echo esc_url( home_url( '/sitemap' ) ); ?>">サイトマップ</a>
           </li>
             <li class="sitemap__item sitemap__item-bold sitemap__item--layout">
-              <a href="http://xs273754.xsrv.jp/himarin_DIVING/contact">お問わ合せ</a>
+              <a href="<?php echo esc_url( home_url( '/contact' ) ); ?>">お問わ合せ</a>
             </li>
           </ul>
 
@@ -96,10 +96,6 @@
     </div>
   </div>
   <!-- /page-contents -->
-
-  <!-- contact -->
-  <?php get_template_part('layout-contact'); ?>
-  <!-- /contact -->
 
 </main>
 <?php get_footer(); ?>

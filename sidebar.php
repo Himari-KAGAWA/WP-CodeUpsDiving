@@ -24,10 +24,13 @@
           ),
         );
         $popular_posts = new \WordPressPopularPosts\Query($args);
-
-        if ($popular_posts) :
-          foreach ($popular_posts->get_posts() as $popular_post) :
         ?>
+
+        <?php if ($popular_posts) : ?>
+          <?php
+          foreach ($popular_posts->get_posts() as $popular_post) :
+          ?>
+
             <!-- card -->
             <li class="page-sidebar__article card-02">
               <a href="<?php echo get_permalink($popular_post->id); ?>" class="card-02__link">
@@ -35,7 +38,7 @@
                   <?php if (has_post_thumbnail($popular_post->id)) : ?>
                     <img src="<?php echo get_the_post_thumbnail_url($popular_post->id); ?>" alt="人気記事のサムネイル">
                   <?php else : ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimg.jpg" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimg.jpg" alt="No image">
                   <?php endif; ?>
                 </div>
                 <div class="card-02__header">
@@ -54,10 +57,9 @@
               </a>
             </li>
             <!-- /card -->
-        <?php
-          endforeach;
-        endif;
-        ?>
+          <?php endforeach; ?>
+        <?php endif; ?>
+
       </ul>
 
     </div>
@@ -87,7 +89,7 @@
                   <?php if (has_post_thumbnail()) : ?>
                     <?php the_post_thumbnail(); ?>
                   <?php else : ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimg.jpg" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimg.jpg" alt="No image">
                   <?php endif; ?>
                 </div>
               </div>
@@ -106,7 +108,7 @@
       <?php wp_reset_postdata(); ?>
 
       <div class="page-sidebar__comment-link">
-        <a href="http://xs273754.xsrv.jp/himarin_DIVING/voice/" class="link-button">View more
+        <a href="<?php echo esc_url(home_url('/voice')); ?>" class="link-button">View more
           <span class="arrow-x"></span>
         </a>
       </div>
@@ -139,7 +141,7 @@
                   <?php if (has_post_thumbnail()) : ?>
                     <?php the_post_thumbnail(); ?>
                   <?php else : ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimg.jpg" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimg.jpg" alt="No image">
                   <?php endif; ?>
                 </div>
                 <div class="card-01__body">
@@ -163,7 +165,7 @@
 
       </div>
       <div class="page-sidebar__campaign-link">
-        <a href="http://xs273754.xsrv.jp/himarin_DIVING/campaign/" class="link-button">View more
+        <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="link-button">View more
           <span class="arrow-x"></span>
         </a>
       </div>
@@ -178,33 +180,36 @@
       <div class="page-sidebar__archive-list js-archive">
         <?php
         $year_prev = null;
-        $months = $wpdb->get_results("SELECT DISTINCT MONTH( post_date ) AS month ,
-                            YEAR( post_date ) AS year,
-                            COUNT( id ) as post_count FROM $wpdb->posts
-                            WHERE post_status = 'publish' and post_date <= now( )
+        $months = $wpdb->get_results("SELECT DISTINCT MONTH(post_date) AS month,
+                            YEAR(post_date) AS year,
+                            COUNT(id) as post_count FROM $wpdb->posts
+                            WHERE post_status = 'publish' and post_date <= now()
                             and post_type = 'post'
-                            GROUP BY month , year
-                            ORDER BY post_date DESC");
-        foreach ($months as $month) :
-          $year_current = $month->year;
-          if ($year_current != $year_prev) {
-            if ($year_prev != null) { ?>
+                            GROUP BY month, year
+                            ORDER BY post_date DESC"); ?>
+        <?php
+        foreach ($months as $month) : $year_current = $month->year;
+        ?>
+          <?php if ($year_current != $year_prev) : ?>
+            <?php if ($year_prev != null) : ?>
               </ul> <!-- Close the previous month's list -->
-            <?php } ?>
+            <?php endif; ?>
             <div class="page-sidebar__year js-open"><?php echo $month->year; ?></div>
             <ul class="page-sidebar__month">
-            <?php } ?>
+            <?php endif; ?>
             <li class="page-sidebar__month-item">
               <a href="<?php bloginfo('url') ?>/<?php echo $month->year; ?>/<?php echo date("m", mktime(0, 0, 0, $month->month, 1, $month->year)) ?>">
                 <?php echo date("n", mktime(0, 0, 0, $month->month, 1, $month->year)) ?>月
               </a>
             </li>
-          <?php $year_prev = $year_current;
-        endforeach; ?>
+          <?php
+          $year_prev = $year_current;
+        endforeach;
+          ?>
+
             </ul> <!-- Close the last month's list -->
 
       </div>
-
     </div>
   </div>
 </aside>

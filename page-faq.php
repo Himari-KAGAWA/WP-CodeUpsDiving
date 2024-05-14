@@ -21,13 +21,16 @@
         <dl class="page-faq__lists faq-items">
 
           <!-- Q&A呼出し -->
-          <?php
-          $faqGroup = SCF::get('faq'); // 繰り返しフィールドの値を取得する
-          if (!empty($faqGroup)) { // 繰り返しフィールドに値がある場合に処理を行う
-            foreach ($faqGroup as $faqItem) { // 繰り返し構文で各値を順次取り出す
+          <!-- 繰り返しフィールドの値を取得する -->
+          <?php $faqGroup = SCF::get('faq'); ?>
+          <!-- 繰り返しフィールドに値がある場合に処理を行う -->
+          <?php if (!empty($faqGroup)) : ?>
+            <!-- 繰り返し構文で各値を順次取り出す -->
+            <?php foreach ($faqGroup as $faqItem) : ?>
+              <?php
               $faq_question = esc_html($faqItem['question']); // questionをエスケープ処理して変数に代入する
               $faq_asked = esc_html($faqItem['asked']); // askedをエスケープ処理して変数に代入する
-          ?>
+              ?>
               <div class="faq-item js-faq">
                 <dt class="faq-item__question">
                   <p class="faq-item__question-text"><?php echo nl2br($faq_question); ?></p>
@@ -36,20 +39,14 @@
                   <p class="faq-item__answer-text"><?php echo nl2br($faq_asked); ?></p>
                 </dd>
               </div>
-          <?php
-            }
-          }
-          ?>
+            <?php endforeach; ?>
+          <?php endif; ?>
 
         </dl>
       </div>
     </div>
   </div>
   <!-- /page-contents -->
-
-  <!-- contact -->
-  <?php get_template_part('layout-contact'); ?>
-  <!-- /contact -->
 
 </main>
 

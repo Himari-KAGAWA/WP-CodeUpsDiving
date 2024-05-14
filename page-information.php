@@ -89,9 +89,6 @@
   </div>
   <!-- /page-contents -->
 
-  <!-- contact -->
-  <?php get_template_part('layout-contact'); ?>
-  <!-- /contact -->
 </main>
 
 <?php get_footer(); ?>

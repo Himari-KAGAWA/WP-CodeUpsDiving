@@ -51,19 +51,19 @@
               <div class="page-gallery__items">
 
                 <!-- ギャラリー画像呼出し -->
-                <?php
-                $imgGroup = SCF::get('about_gallery');
-                if (!empty($imgGroup)) {
-                  foreach ($imgGroup as $imgItem) {
+                <?php $imgGroup = SCF::get('about_gallery'); ?>
+                <?php if (!empty($imgGroup)) : ?>
+                  <?php foreach ($imgGroup as $imgItem) : ?>
+                    <?php
                     $img_data = wp_get_attachment_image_src($imgItem['gallery_img'], 'full');
                     $url = $img_data[0];
-                    $alt = get_post_meta($imgItem['gallery_img'], '_wp_attachment_image_alt', true) ?: get_post($imgItem['gallery_img'])->post_title;
-                    echo '<div class="page-gallery__item js-modal__trigger">';
-                    echo '<img src="' . esc_url($url) . '" alt="' . esc_attr($alt) . '">';
-                    echo '</div>';
-                  }
-                }
-                ?>
+                    $alt = get_post_meta($imgItem['gallery_img'], '_wp_attachment_image_alt', true) ?: get_post($imgItem['gallery_img'])->post_title; ?>
+
+                    <div class="page-gallery__item js-modal__trigger">
+                      <img src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($alt); ?>">
+                    </div>
+                  <?php endforeach; ?>
+                <?php endif; ?>
 
               </div>
             </div>
@@ -86,10 +86,6 @@
       </div>
       <!-- /modal -->
       <!-- /page-contents -->
-
-      <!-- contact -->
-      <?php get_template_part('layout-contact'); ?>
-      <!-- /contact -->
 
 </main>
 

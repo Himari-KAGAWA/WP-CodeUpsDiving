@@ -35,12 +35,14 @@
                 <!-- data -->
                 <?php
                 $courses = SCF::get_option_meta('theme-options', 'license');
-                if (!empty($courses)) {
-                  foreach ($courses as $course => $courseItem) {
+                ?>
+                <?php if (!empty($courses)) : ?>
+                  <?php
+                  foreach ($courses as $course => $courseItem) :
                     $name1 = esc_html($courseItem['title_license']);
                     $name2 = esc_html($courseItem['subTitle_license']);
                     $price = esc_html($courseItem['price_license']);
-                ?>
+                  ?>
 
                     <div class="price-list__corse-menus">
                       <dt class="price-list__corse-menu">
@@ -50,11 +52,9 @@
                       </dt>
                       <dd class="price-list__corse-price">¥<?php echo $price; ?></dd>
                     </div>
+                  <?php endforeach; ?>
+                <?php endif; ?>
 
-                <?php
-                  }
-                }
-                ?>
 
               </dl>
             </div>
@@ -76,12 +76,14 @@
                 <!-- data -->
                 <?php
                 $courses = SCF::get_option_meta('theme-options', 'experience');
-                if (!empty($courses)) {
-                  foreach ($courses as $course => $courseItem) {
+                ?>
+                <?php if (!empty($courses)) : ?>
+                  <?php
+                  foreach ($courses as $course => $courseItem) :
                     $name1 = esc_html($courseItem['title_experience']);
                     $name2 = esc_html($courseItem['subTitle_experience']);
                     $price = esc_html($courseItem['price_experience']);
-                ?>
+                  ?>
 
                     <div class="price-list__corse-menus">
                       <dt class="price-list__corse-menu">
@@ -91,11 +93,8 @@
                       </dt>
                       <dd class="price-list__corse-price">¥<?php echo $price; ?></dd>
                     </div>
-
-                <?php
-                  }
-                }
-                ?>
+                  <?php endforeach; ?>
+                <?php endif; ?>
 
               </dl>
             </div>
@@ -117,12 +116,14 @@
                 <!-- data -->
                 <?php
                 $courses = SCF::get_option_meta('theme-options', 'fun');
-                if (!empty($courses)) {
-                  foreach ($courses as $course => $courseItem) {
+                ?>
+                <?php if (!empty($courses)) : ?>
+                  <?php
+                  foreach ($courses as $course => $courseItem) :
                     $name1 = esc_html($courseItem['title_fun']);
                     $name2 = esc_html($courseItem['subTitle_fun']);
                     $price = esc_html($courseItem['price_fun']);
-                ?>
+                  ?>
 
                     <div class="price-list__corse-menus">
                       <dt class="price-list__corse-menu">
@@ -132,11 +133,8 @@
                       </dt>
                       <dd class="price-list__corse-price">¥<?php echo $price; ?></dd>
                     </div>
-
-                <?php
-                  }
-                }
-                ?>
+                  <?php endforeach; ?>
+                <?php endif; ?>
 
               </dl>
             </div>
@@ -158,12 +156,14 @@
                 <!-- data -->
                 <?php
                 $courses = SCF::get_option_meta('theme-options', 'special');
-                if (!empty($courses)) {
-                  foreach ($courses as $course => $courseItem) {
+                ?>
+                <?php if (!empty($courses)) : ?>
+                  <?php
+                  foreach ($courses as $course => $courseItem) :
                     $name1 = esc_html($courseItem['title_special']);
                     $name2 = esc_html($courseItem['subTitle_special']);
                     $price = esc_html($courseItem['price_special']);
-                ?>
+                  ?>
 
                     <div class="price-list__corse-menus">
                       <dt class="price-list__corse-menu">
@@ -174,10 +174,8 @@
                       <dd class="price-list__corse-price">¥<?php echo $price; ?></dd>
                     </div>
 
-                <?php
-                  }
-                }
-                ?>
+                  <?php endforeach; ?>
+                <?php endif; ?>
 
               </dl>
             </div>
@@ -188,9 +186,6 @@
   </div>
   <!-- /page-contents -->
 
-  <!-- contact -->
-  <?php get_template_part('layout-contact'); ?>
-  <!-- /contact -->
 </main>
 
 <?php get_footer(); ?>

@@ -22,17 +22,17 @@ add_action("wp_enqueue_scripts", "my_script_init");
 
 
 // カスタム投稿タイプの表示件数指定
-function custom_posts_per_page( $query ) {
-  if ( !is_admin() && $query->is_main_query() ) {
-      if ( $query->is_post_type_archive('campaign') || $query->is_tax('dive_course') ) {
-          $query->set( 'posts_per_page', 4 ); // dive_course タクソノミーのアーカイブページの投稿数を 4 に設定
-      }
-      elseif ( $query->is_post_type_archive('voice') || is_tax('testimonials') ) {
-          $query->set( 'posts_per_page', 6 ); // testimonials タクソノミーのアーカイブページの投稿数を 6 に設定
-      }
+function custom_posts_per_page($query)
+{
+  if (!is_admin() && $query->is_main_query()) {
+    if ($query->is_post_type_archive('campaign') || $query->is_tax('campaign_category')) {
+      $query->set('posts_per_page', 4); // campaign_category タクソノミーのアーカイブページの投稿数を 4 に設定
+    } elseif ($query->is_post_type_archive('voice') || is_tax('voice_category')) {
+      $query->set('posts_per_page', 6); // voice_category タクソノミーのアーカイブページの投稿数を 6 に設定
+    }
   }
 }
-add_action( 'pre_get_posts', 'custom_posts_per_page' );
+add_action('pre_get_posts', 'custom_posts_per_page');
 
 
 // アーカイブタイトルの書きかえ
@@ -75,4 +75,13 @@ add_filter('get_the_archive_title', 'my_archive_title');
  * @param int $position メニューの位置
  */
 SCF::add_options_page('price', '金額一覧', 'manage_options', 'theme-options');
-?>
+
+function remove_body_class_from_home_page($classes)
+{
+  if (is_home()) {
+    // home.phpなどのページテンプレートではクラスを削除する
+    $classes = array_diff($classes, array('blog'));
+  }
+  return $classes;
+}
+add_filter('body_class', 'remove_body_class_from_home_page');

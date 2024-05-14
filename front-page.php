@@ -15,7 +15,7 @@
         <!-- Slides -->
         <?php
         // ループで画像を取得する
-        for ($i = 1; $i <= 4; $i++) {
+        for ($i = 1; $i <= 4; $i++) :
           // SP版画像の取得
           $mv_sp_group = get_field('mv_sp');
           $sp_image_url = $mv_sp_group['imgSP' . $i]['url'];
@@ -27,7 +27,7 @@
           $pc_image_alt = $mv_pc_group['imgPC' . $i]['alt'];
 
           // 画像が存在する場合のみ表示
-          if ($sp_image_url && $pc_image_url) {
+          if ($sp_image_url && $pc_image_url) :
         ?>
             <div class="swiper-slide main-visual__slide">
               <div class="main-visual__img">
@@ -39,11 +39,10 @@
                 </picture>
               </div>
             </div>
-        <?php
-          }
-        }
-        ?>
+          <?php endif; ?>
+        <?php endfor; ?>
         <!-- /Slides -->
+
 
       </div>
     </div>
@@ -74,12 +73,11 @@
               'orderby' => 'date',
               'order' => 'DESC',
             );
-            $query = new WP_Query($args);
-
-            // サブループとしてカスタム投稿をループ
-            if ($query->have_posts()) :
-              while ($query->have_posts()) : $query->the_post();
-            ?>
+            $query = new WP_Query($args); ?>
+            <!-- サブループとしてカスタム投稿をループ -->
+            <?php if ($query->have_posts()) : ?>
+              <?php while ($query->have_posts()) : $query->the_post(); ?>
+                <!-- campaign card -->
                 <article class="campaign__slide swiper-slide">
                   <div class="card-01">
                     <div class="card-01__link">
@@ -87,12 +85,12 @@
                         <?php if (has_post_thumbnail()) : ?>
                           <?php the_post_thumbnail(); ?>
                         <?php else : ?>
-                          <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimg.jpg" alt="No Image" width="280" height="188">
+                          <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimg.jpg" alt="No image" width="280" height="188">
                         <?php endif; ?>
                       </div>
                       <div class="card-01__body">
                         <div class="card-01__header">
-                          <div class="category"><?php echo get_the_terms(get_the_ID(), 'dive_course')[0]->name; ?></div>
+                          <div class="category"><?php echo get_the_terms(get_the_ID(), 'campaign_category')[0]->name; ?></div>
                           <h3 class="card-01__title"><?php the_title(); ?></h3>
                         </div>
                         <div class="card-01__content">
@@ -106,14 +104,10 @@
                     </div>
                   </div>
                 </article>
-            <?php
-              endwhile;
-              wp_reset_postdata(); // クエリのリセット
-            else :
-              // 投稿がない場合の処理
-              echo 'No posts found';
-            endif;
-            ?>
+                <!-- /campaign card -->
+              <?php endwhile; ?>
+            <?php endif; ?>
+            <?php wp_reset_postdata(); ?>
             <!-- Campaign Slides -->
 
           </div>
@@ -128,7 +122,7 @@
       </div>
     </div>
     <div class="campaign__link">
-      <a href="http://xs273754.xsrv.jp/himarin_DIVING/campaign/" class="link-button">View more
+      <a href="<?php echo esc_url(home_url('/campaign')); ?>" class="link-button">View more
         <span class="arrow-x"></span>
       </a>
     </div>
@@ -156,7 +150,7 @@
             ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。<br />ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト
           </p>
           <div class="about__link">
-            <a href="http://xs273754.xsrv.jp/himarin_DIVING/about-us/" class="link-button">View more
+            <a href="<?php echo esc_url(home_url('/about-us')); ?>" class="link-button">View more
               <span class="arrow-x"></span>
             </a>
           </div>
@@ -185,7 +179,7 @@
             当店はダイビングライセンス（Cカード）世界最大の教育機関PADIの「正規店」として店舗登録されています。<br />正規登録店として、安心安全に初めての方でも安心安全にライセンス取得をサポート致します。
           </p>
           <div class="information__link">
-            <a href="http://xs273754.xsrv.jp/himarin_DIVING/information/" class="link-button">View more
+            <a href="<?php echo esc_url(home_url('/information')); ?>" class="link-button">View more
               <span class="arrow-x"></span>
             </a>
           </div>
@@ -218,7 +212,6 @@
         <?php if ($the_query->have_posts()) : ?>
           <?php while ($the_query->have_posts()) : ?>
             <?php $the_query->the_post(); ?>
-
             <!-- blog card -->
             <article class="blog-cards__item card-02">
               <a href="<?php the_permalink(); ?>" class="card-02__link">
@@ -226,7 +219,7 @@
                   <?php if (has_post_thumbnail()) : ?>
                     <?php the_post_thumbnail(); ?>
                   <?php else : ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimg.jpg" alt="No Image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimg.jpg" alt="No image" width="301" height="201">
                   <?php endif; ?>
                 </div>
                 <div class="card-02__header">
@@ -245,7 +238,7 @@
 
       </div>
       <div class="blog__link">
-        <a href="http://xs273754.xsrv.jp/himarin_DIVING/blog/" class="link-button">View more
+        <a href="<?php echo esc_url(home_url('/blog')); ?>" class="link-button">View more
           <span class="arrow-x"></span>
         </a>
       </div>
@@ -272,18 +265,18 @@
           'orderby' => 'date',
           'order' => 'DESC',
         );
-        $query = new WP_Query($args);
-        // サブループとしてカスタム投稿をループ
-        if ($query->have_posts()) :
-          while ($query->have_posts()) : $query->the_post();
-        ?>
+        $query = new WP_Query($args); ?>
+
+        <!-- サブループとしてカスタム投稿をループ -->
+        <?php if ($query->have_posts()) : ?>
+          <?php while ($query->have_posts()) : $query->the_post(); ?>
             <!-- Voice-card -->
             <div class="voice-cards__item card-03">
               <div class="card-03__header">
                 <div class="card-03__left">
                   <div class="card-03__attribute">
                     <p><?php the_field('age') ?>代(<?php the_field('gender') ?>)</p>
-                    <span class="category"><?php echo get_the_terms(get_the_ID(), 'testimonials')[0]->name; ?></span>
+                    <span class="category"><?php echo get_the_terms(get_the_ID(), 'voice_category')[0]->name; ?></span>
                   </div>
                   <h3 class="card-03__title">
                     <?php the_title(); ?>
@@ -293,7 +286,7 @@
                   <?php if (has_post_thumbnail()) : ?>
                     <?php the_post_thumbnail(); ?>
                   <?php else : ?>
-                    <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimg.jpg" alt="">
+                    <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimg.jpg" alt="No image" while="151" height="117">
                   <?php endif; ?>
                 </div>
               </div>
@@ -309,18 +302,13 @@
               </div>
             </div>
             <!-- Voice-card -->
-        <?php
-          endwhile;
-          wp_reset_postdata(); // クエリのリセット
-        else :
-          // 投稿がない場合の処理
-          echo 'No posts found';
-        endif;
-        ?>
+          <?php endwhile; ?>
+        <?php endif; ?>
+        <?php wp_reset_postdata(); ?>
 
       </div>
       <div class="voice__link">
-        <a href="http://xs273754.xsrv.jp/himarin_DIVING/voice/" class="link-button">View more
+        <a href="<?php echo esc_url(home_url('/voice')); ?>" class="link-button">View more
           <span class="arrow-x"></span>
         </a>
       </div>
@@ -453,7 +441,7 @@
         </div>
       </div>
       <div class="price__link">
-        <a href="http://xs273754.xsrv.jp/himarin_DIVING/price/" class="link-button">View more
+        <a href="<?php echo esc_url(home_url('/price')); ?>" class="link-button">View more
           <span class="arrow-x"></span>
         </a>
       </div>
@@ -463,52 +451,7 @@
     </div>
   </section>
   <!-- /price -->
-  <!-- contact -->
-  <section id="contact" class="contact section">
-    <div class="contact__inner inner">
-      <div class="contact__wrapper">
-        <div class="contact__info">
-          <div class="contact__logo">
-            <picture>
-              <source srcset="<?php echo get_template_directory_uri(); ?>/images/common/pc/logo-contact.svg" media="(min-width:768px)" />
-              <img src="<?php echo get_template_directory_uri(); ?>/images/common/logo-contact.png" alt="CodeUps" width="174" height="65" />
-            </picture>
-          </div>
-          <div class="contact__access">
-            <div class="contact__store-info">
-              <address class="contact__address">沖縄県那覇市1-1</address>
-              <p>TEL:<a href="tel:0120-000-0000">0120-000-0000</a></p>
-              <p>営業時間:8:30-19:00</p>
-              <p>定休日:毎週火曜日</p>
-            </div>
-            <div class="contact__map">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.0378408422885!2d139.96050337620395!3d35.72528787257302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601880e228629bdb%3A0xed622313a1e48d27!2z5Lit5bGx56u26aas5aC0!5e0!3m2!1sja!2sjp!4v1701989823861!5m2!1sja!2sjp" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-          </div>
-        </div>
-        <div class="contact__inquiry">
-          <div class="contact__header section-header">
-            <div class="section-header__engtitle section-header__engtitle--contact">
-              contact
-            </div>
-            <h2 class="section-header__jatitle section-header__jatitle--layout">
-              お問い合わせ
-            </h2>
-          </div>
-          <p class="contact__text">ご予約・お問い合わせはコチラ</p>
-          <div class="contact__link">
-            <a href="http://xs273754.xsrv.jp/himarin_DIVING/contact/" class="link-button">Contact us
-              <span class="arrow-x"></span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="contact__img-icon">
-      <img src="<?php echo get_template_directory_uri(); ?>/images/common/pc/fish-illust_2.png" alt="魚の群れのアイコン" width="109" height="50" />
-    </div>
-  </section>
-  <!-- /contact -->
+
 </main>
 
 <?php get_footer(); ?>

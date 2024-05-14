@@ -21,16 +21,17 @@
       <div class="legal-document__inner inner">
         <h2 class="legal-document__title"><?php the_title(); ?></h2>
 
-        <?php the_content(); ?>
+        <?php if (have_posts()) : ?>
+          <?php while (have_posts()) : ?>
+            <?php the_post(); ?>
+            <?php the_content(); ?>
+          <?php endwhile; ?>
+        <?php endif; ?>
 
       </div>
     </section>
     <!-- /page-contents -->
   </div>
-
-  <!-- contact -->
-  <?php get_template_part('layout-contact'); ?>
-  <!-- /contact -->
 
 </main>
 <?php get_footer(); ?>

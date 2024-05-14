@@ -29,7 +29,7 @@
                 <?php if (has_post_thumbnail()) : ?>
                   <?php the_post_thumbnail(); ?>
                 <?php else : ?>
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimg.jpg" alt="">
+                  <img src="<?php echo get_template_directory_uri(); ?>/images/common/noimg.jpg" alt="No image">
                 <?php endif; ?>
               </div>
               <div class="page-blogDtail__content">
@@ -68,9 +68,6 @@
   </div>
   <!-- /page-contents -->
 
-  <!-- contact -->
-  <?php get_template_part('layout-contact'); ?>
-  <!-- /contact -->
 </main>
 
 <?php get_footer(); ?>
